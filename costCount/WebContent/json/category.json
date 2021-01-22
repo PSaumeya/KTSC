@@ -1,0 +1,13 @@
+{
+"categoryVal":
+[{"categoryKey":"0","categoryV":"-select-"},
+{"categoryKey":"1","categoryV":"Accommodation"},
+{"categoryKey":"2","categoryV":"Food"},
+{"categoryKey":"3","categoryV":"Living Expenses"},
+{"categoryKey":"4","categoryV":"Entertainment"},
+{"categoryKey":"5","categoryV":"Health Care"},
+{"categoryKey":"6","categoryV":"Transportation"},
+{"categoryKey":"7","categoryV":"Others"}
+
+]
+}

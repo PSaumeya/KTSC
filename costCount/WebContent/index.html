@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+
+
+<!-- for ds -->
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+                  	
+          var db = null;
+
+          document.addEventListener("deviceready", function(){
+		  db=window.sqlitePlugin.openDatabase({name: 'mm', location: 2, androidDatabaseImplementation: 2});
+          //	db = window.sqlitePlugin.openDatabase({name: "note.db"});
+          	db.transaction(function(tx) {
+				//alert("Trying to create table");
+          		tx.executeSql("CREATE TABLE IF NOT EXISTS note (tableId integer primary key autoincrement unique,date DATE, description text,category text,typeExp text,rs integer,categoryKey text)");
+          		//alert("table created");
+          	}, function(err){
+          		alert("An error occured while initializing the app: "+err);
+          	});
+          }, false);
+        
+       
+        </script>
+
+
+<script src="resources/sap-ui-core.js" id="sap-ui-bootstrap"
+	data-sap-ui-libs="sap.m,sap.ui.layout,sap.viz"
+	data-sap-ui-theme="sap_bluecrystal">
+		</script>
+<link rel="stylesheet" type="text/css" href="css/expensesCss.css">
+<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+<script>
+	sap.ui.localResources("images");
+	sap.ui.localResources("json");
+	sap.ui.localResources("css");
+	sap.ui.localResources("global");
+	jQuery.sap.registerModulePath('global', 'global/');
+	jQuery.sap.require("global.global");
+
+
+	sap.ui.localResources("ext");
+	
+	
+	
+</script>
+<script>
+		/* alert("adding page"); */
+				sap.ui.localResources("costcount");
+				var app = new sap.m.App({initialPage:"idAddExpenses1"});
+				var page = sap.ui.view({id:"idAddExpenses1", viewName:"costcount.AddExpenses", type:sap.ui.core.mvc.ViewType.JS});
+				app.addPage(page);
+				app.placeAt("content");
+				/* alert(" page added"); */
+		</script>
+
+</head>
+
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+
+
+
+	<!-- for end ds -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
