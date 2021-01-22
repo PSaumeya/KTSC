@@ -1,0 +1,323 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:u="sap.ui.unified" xmlns:form="sap.ui.commons.form" xmlns:table="sap.ui.table"   xmlns:m="sap.suite.ui.microchart"
+    xmlns:viz="sap.viz.ui5.controls" 
+	xmlns="sap.m"   xmlns:dialog="sap/m/Dialog" xmlns:l="sap.ui.layout" controllerName="ktscgame.homeView"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Page" class="marginBoxContent">
+		<customHeader id="customHeaderID">
+			<Toolbar  >
+
+
+				<Bar id="barHeaderID">
+				
+					<contentMiddle>
+						<Label id="headerID" text="KTSC"   />
+					</contentMiddle> 
+					 <contentRight>
+					
+					<Button  id="pauseButtonID" text="..." press="pauseButtonPress" /> 
+					</contentRight> 
+				</Bar>
+			</Toolbar>
+		</customHeader>
+		<subHeader>
+
+		</subHeader>
+		<content>
+		<!-- <l:VerticalLayout id="ImgLayout" width="100%">
+				<l:content>
+			<FlexBox
+					height="100px"
+					alignItems="Center"
+					justifyContent="Center">
+					<items>
+						<Image src="images/kingI.jpg"></Image>
+						<Image src="images/thiefI.jpg"></Image>
+						<Image src="images/soldierI.jpg"></Image>
+						<Image src="images/commanderI.jpg"></Image>
+					</items>
+				</FlexBox>
+				</l:content>
+			</l:VerticalLayout> -->
+			<l:VerticalLayout id="MessageLayout" width="100%">
+				<l:content>
+			<FlexBox
+					height="100px"
+					alignItems="Center"
+					justifyContent="Center">
+					<items>
+<!-- 					 <Button id="startGameImgID" text="START" press="startGame" />  -->
+					
+						<Image id="startGameImgID" src="images/startButton.jpg" press="startGame"></Image> 
+						<Button  id="distributeButtonID" text="DISTRIBUTE" press="distributePress" />
+						<Button  id="scoreButtonID" text="Score" press="showScore" />
+						 <Button  id="hidescoreButtonID" text="Hide Score" press="hideScore" />
+						 <Button  id="finalScoreButtonID" text="Final Score" press="finalScore" />
+						<Button  id="startAgainButtonKtsc" text="Play Again" press="startGame" />
+<!-- 					<Image id="pauseButtonID" src="images/pauseButton.jpg" press="pauseButtonPress"></Image> -->
+				
+					</items>
+					
+					
+				</FlexBox>
+				</l:content>
+			</l:VerticalLayout>
+			
+			
+			
+			
+			<l:VerticalLayout id="inputFormLayoutID">
+			<l:content>
+					<form:SimpleForm id="inputFormID"  editable="true">
+					<l:VerticalLayout id="inputFormLayout" >
+					<Label id="enterDetailsID" text="Enter Details:-"   />
+						<l:HorizontalLayout class="sapUiSmallMargin">
+							
+							<Input id="player1Name" type="Text" placeholder="Enter Player1 Name" ></Input>
+							
+								
+								<RadioButtonGroup id="Genderplayer1" columns="2"  class="sapUiMediumMarginBottom">
+								<buttons>
+									<RadioButton  text="Male" selected="true" />
+									<RadioButton  text="Female" />
+					
+								</buttons>
+								</RadioButtonGroup>
+								
+									<!-- <u:FileUploader
+										id="player1fileUploader"
+										name="myFileUpload"
+										uploadUrl="upload/"
+										
+										tooltip="Upload your Pic"
+										uploadComplete="handleUploadComplete"/>
+									<Button
+										text="Upload File"
+										press="handleUploadPress"/>
+								 -->
+								
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMargin">
+							
+							<Input id="player2Name" type="Text" placeholder="Enter Player2 Name" ></Input>
+							<RadioButtonGroup id="Genderplayer2" columns="2"  class="sapUiMediumMarginBottom">
+								<buttons>
+									<RadioButton  text="Male" selected="true" />
+									<RadioButton  text="Female" />
+					
+								</buttons>
+								</RadioButtonGroup>	
+									<!-- <u:FileUploader
+										id="player2fileUploader"
+										name="myFileUpload"
+										uploadUrl="upload/"
+										
+										tooltip="Upload your Pic"
+										uploadComplete="handleUploadComplete"/>
+									<Button
+										text="Upload File"
+										press="handleUploadPress"/> -->
+								
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMargin">
+							
+							<Input id="player3Name" type="Text" placeholder="Enter Player3 Name" ></Input>
+							<RadioButtonGroup id="Genderplayer3" columns="2"  class="sapUiMediumMarginBottom">
+								<buttons>
+									<RadioButton  text="Male" selected="true" />
+									<RadioButton  text="Female" />
+					
+								</buttons>
+								</RadioButtonGroup>	
+									<!-- <u:FileUploader
+										id="player3fileUploader"
+										name="myFileUpload"
+										uploadUrl="upload/"
+										
+										tooltip="Upload your Pic"
+										uploadComplete="handleUploadComplete"/>
+									<Button
+										text="Upload File"
+										press="handleUploadPress"/> -->
+								
+						</l:HorizontalLayout>
+						<l:HorizontalLayout class="sapUiSmallMargin">
+							
+							<Input id="player4Name" type="Text" placeholder="Enter Player4 Name" ></Input>
+							<RadioButtonGroup id="Genderplayer4" columns="2"  class="sapUiMediumMarginBottom">
+								<buttons>
+									<RadioButton  text="Male" selected="true" />
+									<RadioButton  text="Female" />
+					
+								</buttons>
+								</RadioButtonGroup>	
+								<!-- 	<u:FileUploader
+										id="player4fileUploader"
+										name="myFileUpload"
+										uploadUrl="upload/"
+										
+										tooltip="Upload your Pic"
+										uploadComplete="handleUploadComplete"/>
+									<Button
+										text="Upload File"
+										press="handleUploadPress"/> -->
+								
+						</l:HorizontalLayout>
+						
+						<l:HorizontalLayout class="sapUiSmallMargin" width="100%">
+						
+							<Button  id="saveNameButtonID" text="SAVE" press="saveName" />
+
+						
+				
+								<Button id="cancelNameButtonID" text="CANCEL" press="cancelForm" />
+
+						
+								
+						</l:HorizontalLayout>
+						</l:VerticalLayout>
+					</form:SimpleForm>
+			</l:content>
+			</l:VerticalLayout>
+			<!-- score table start from here -->
+<l:VerticalLayout id="scoreTableLayout" width="100%">
+				<l:content>
+	
+	<ScrollContainer horizontal="true" vertical="true"
+		focusable="true">
+		 <!-- <table:Table width="100%" visibleRowCount="5" selectionMode="Single" editable="false" rows="{/data}">
+            <table:title><Label text="Wochentage"></Label></table:title>
+            <table:Column>
+                <Label text="ID" />
+                <table:template><TextField value="{id}"></TextField></table:template>
+            </table:Column>
+
+        </table:Table> -->
+	<table:Table id="scoreTable" width="80%" visibleRowCount="5" selectionMode="Single" editable="false" rows="{/data}">
+<!--             <table:title><Label text="score"></Label><table:/title> -->
+            <table:Column>
+                <Label id="scoreTable1Label" text="Player 1" />
+                 <table:template><Text text="{p1}"></Text> </table:template>
+            </table:Column>
+            <table:Column>
+                <Label id="scoreTable2Label" text="Player 2" />
+                 <table:template><Text text="{p2}"></Text> </table:template>
+            </table:Column>
+            <table:Column>
+                <Label id="scoreTable3Label" text="Player 3" />
+                <table:template> <Text text="{p3}"></Text> </table:template>
+            </table:Column>
+            <table:Column>
+                <Label id="scoreTable4Label" text="Player 4" />
+                <table:template> <Text text="{p4}"></Text> </table:template>
+            </table:Column>
+
+        </table:Table>
+		
+
+	</ScrollContainer>
+			
+			</l:content>
+				</l:VerticalLayout>
+			
+		<!-- 	score table code ends here -->
+		
+		
+		
+			<!-- Final score layout start from here -->
+			<l:HorizontalLayout id="finalScoreLayout" width="90%" class="sapUiSmallMargin" >
+			<l:VerticalLayout >
+				<l:content>
+				 <Label id="player1Score" text="" />
+				<Label id="player2Score" text="" />
+				<Label id="player3Score" text="" />
+				<Label id="player4Score" text="" />
+				
+				<Label id="maxScorePlayer" text="" />
+				<Image  id="imageFinalResult" src="images/prizeImg.jpg" ></Image>
+				
+				
+				</l:content>
+				
+				</l:VerticalLayout>
+				<l:VerticalLayout >
+				<l:content>
+				
+	<viz:VizFrame xmlns="sap.viz" id="BarGraphID" >
+			</viz:VizFrame> 
+				</l:content>
+				
+				</l:VerticalLayout> 
+				<l:VerticalLayout >
+				<FlexBox justifyContent="Center" alignItems="Start">				
+		  <items>
+			<viz:VizFrame xmlns="sap.viz" id="idpiechart" vizType="pie"/>			
+		 </items> 
+		</FlexBox>
+				</l:VerticalLayout> 
+				</l:HorizontalLayout>
+			 <!-- <viz:VizFrame xmlns="sap.viz" id="BarGraphID" >
+			</viz:VizFrame>  -->
+		<!-- 	Final score layout code ends here -->
+		
+		
+		
+			
+			<l:VerticalLayout id="containerLayout" width="90%">
+				<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
+					<l:BlockLayoutRow accentCells="Accent1">
+						<l:BlockLayoutCell id="player1MainLayout" title="Player1">
+						<Image id="player1ImgSet" src="images/boyFace.jpg"></Image>
+						<l:VerticalLayout>
+							<Text id="player1NameSet" text="" visible="false" />
+							<Image  id="choosePlayer1ID" src="images/select.png" press="showResult" visible="false"></Image>
+						</l:VerticalLayout>
+						</l:BlockLayoutCell>
+						<l:BlockLayoutCell>
+
+						</l:BlockLayoutCell>
+						<l:BlockLayoutCell id="player2MainLayout" title="Player2">
+						<Image id="player2ImgSet" src="images/boyFace.jpg"></Image>
+						<l:VerticalLayout>
+							<Text id="player2NameSet"  text="" visible="false"/>
+							<Image  id="choosePlayer2ID" src="images/select.png" press="showResult" visible="false" ></Image>
+							</l:VerticalLayout>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell id="player3MainLayout" title="Player3">
+						<Image id="player3ImgSet" src="images/girlFace.jpg"></Image>
+							<l:VerticalLayout><Text id="player3NameSet"  text="" visible="false"/>
+							<Image  id="choosePlayer3ID" src="images/select.png" press="showResult" visible="false"></Image>
+					</l:VerticalLayout>	</l:BlockLayoutCell>
+						<l:BlockLayoutCell>
+
+						</l:BlockLayoutCell>
+						<l:BlockLayoutCell id="player4MainLayout" title="Player4">
+						<Image id="player4ImgSet" src="images/girlFace.jpg"></Image>
+						<l:VerticalLayout>	<Text id="player4NameSet"  text="" visible="false"/>
+							<Image  id="choosePlayer4ID" src="images/select.png" press="showResult" visible="false"></Image>
+					</l:VerticalLayout>	</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+
+
+
+				</l:BlockLayout>
+			</l:VerticalLayout>
+
+
+			
+
+
+
+		</content>
+
+		<footer>
+			<Bar id="barFooterID">
+				<contentRight>
+					<Label text="@KTSC 2017" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

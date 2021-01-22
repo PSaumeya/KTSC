@@ -1,0 +1,15 @@
+<Dialog modal="true"
+      xmlns= "sap.ui.commons" xmlns:b="sap.suite.ui.commons" xmlns:l="sap.ui.layout" xmlns:m="sap.m" stretch="true" showHeader="true" >
+  <!-- <buttons>
+      <Button id="btnInFragment" text="Close" press="doSomething"/>
+  </buttons> -->
+  <content>
+  
+  <l:VerticalLayout>
+  <m:Text id="oTextResultMsg" text=""></m:Text>
+							<Image  id="imageResult" src="" ></Image>
+							<Button  id="okButtonID" text="OK" press="okPress" />
+					</l:VerticalLayout>
+    
+  </content>
+</Dialog>

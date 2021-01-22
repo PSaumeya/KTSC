@@ -1,0 +1,45 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:form="sap.ui.commons.form"
+		controllerName="ktscgame.loginktsc" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page
+    title="Page"
+    class="marginBoxContent" >
+    <customHeader>
+      <Bar>
+        
+        <contentMiddle><Label text="Login" /></contentMiddle>
+        <contentRight><Label text="@Logo" /></contentRight>
+      </Bar>
+    </customHeader>
+    
+    <content >
+    
+		<form:SimpleForm id="loginFormID" width="50%" maxContainerCols="3" layout="ResponsiveLayout"   >
+		<form:title><core:Title></core:Title></form:title>
+		<form:content>
+		
+			<Label text="" />
+			<Input id="userNameInput" type="Text" placeholder="Username" width="100%"></Input>
+			
+			<Label text="" />
+			<Input id="passwordInput" type="Password" placeholder="Password" width="100%"></Input>
+			
+			<Label text="" />
+			<Button id="loginButton" text="Login" width="100%" press="login" ></Button>
+			
+			<Label text="" />
+			<Button id="newUserButton" text="New User" width="100%" press="registration" ></Button>
+			
+			
+		</form:content>
+		<form:title><core:Title></core:Title></form:title>
+				</form:SimpleForm>
+    </content>
+    <footer>
+        <Bar>
+       <contentLeft><Label text="@KTSC 2017" /></contentLeft>
+      </Bar>
+
+    </footer>
+	</Page>
+</core:View>
